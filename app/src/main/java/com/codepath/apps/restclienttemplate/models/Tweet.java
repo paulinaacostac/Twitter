@@ -5,17 +5,22 @@ import com.codepath.apps.restclienttemplate.TimeFormatter;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.time.temporal.Temporal;
 import java.util.ArrayList;
 import java.util.List;
 
 
+@Parcel
 public class Tweet {
     public String body;
     public String createdAt;
     public User user;
     public long id;
+
+    //empty constructor needed by Parceler (for intent passing complex data)
+    public Tweet(){}
 
     public static Tweet fromJson(JSONObject jsonObject) throws JSONException
     {
