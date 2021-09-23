@@ -18,7 +18,8 @@
         android:gravity="start|top"
         android:hint="What´s happening?"
         android:inputType="textMultiLine"
-        android:minLines="5" />
+        android:minLines="5"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/btnTweet"
@@ -29,4 +30,15 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:text="@string/tweet" />
+
+    <TextView
+        android:id="@+id/tvLetterCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etCompose"
+        android:layout_alignStart="@+id/etCompose"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="5dp"
+        android:text="1/280"
+        android:textSize="15sp" />
 </RelativeLayout>
