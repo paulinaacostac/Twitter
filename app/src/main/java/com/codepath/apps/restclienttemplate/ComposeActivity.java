@@ -25,12 +25,12 @@ import okhttp3.Headers;
 
 public class ComposeActivity extends AppCompatActivity {
     public static final String TAG = "ComposeActivity";
-    public static final int MAX_TWEET_LENGTH = 10;
+    public static final int MAX_TWEET_LENGTH = 280;
     EditText etCompose;
     Button btnTweet;
     TextView tvLetterCount;
     TwitterClient client;
-    Drawable bkrColor = btnTweet.getBackground();
+    Drawable default_bkr; // This will be
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,7 @@ public class ComposeActivity extends AppCompatActivity {
         tvLetterCount = findViewById(R.id.tvLetterCount);
         String concat = "0  / "+MAX_TWEET_LENGTH;
         tvLetterCount.setText(concat);
+        default_bkr = btnTweet.getBackground();
 
 
         //Set click listener on button for submitting a new tweet
@@ -124,7 +125,7 @@ public class ComposeActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    btnTweet.setBackground(bkrColor);
+                    btnTweet.setBackground(default_bkr);
 
                     //Block the button too
                     btnTweet.setEnabled(true);
